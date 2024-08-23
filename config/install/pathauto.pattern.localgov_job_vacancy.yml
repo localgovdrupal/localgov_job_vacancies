@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: localgov_job_vacancy
+label: 'Job Vacancy'
+type: 'canonical_entities:node'
+pattern: 'job-vacancies/[node:title]'
+selection_criteria:
+  60d2abed-dd4a-4a5d-adc9-349daaa9e4b2:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 60d2abed-dd4a-4a5d-adc9-349daaa9e4b2
+    context_mapping:
+      node: node
+    bundles:
+      localgov_job_vacancy: localgov_job_vacancy
+selection_logic: and
+weight: -5
+relationships: {  }

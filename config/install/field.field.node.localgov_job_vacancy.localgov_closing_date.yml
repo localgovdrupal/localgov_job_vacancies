@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.localgov_closing_date
+    - node.type.localgov_job_vacancy
+  module:
+    - datetime
+id: node.localgov_job_vacancy.localgov_closing_date
+field_name: localgov_closing_date
+entity_type: node
+bundle: localgov_job_vacancy
+label: 'Closing Date'
+description: 'Indicate the latest allowable application date and time.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

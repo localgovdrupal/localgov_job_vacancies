@@ -1,0 +1,13 @@
+{
+    "name": "localgovdrupal/localgov_job_vacancies",
+    "description": "Job vacancies for LocalGov Drupal",
+    "type": "drupal-module",
+    "homepage": "https://github.com/localgovdrupal/localgov_job_vacancies",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "localgovdrupal/localgov_core": ">=2.1.10",
+        "drupal/field_formatter_class": "^1.6",
+        "drupal/filefield_paths": "^1.0@beta"
+    }
+}
