@@ -4,3 +4,35 @@
  * @file
  * Provides hook handling.
  */
+
+use Drupal\localgov_roles\RolesHelper;
+
+/**
+ * Implements hook_localgov_roles_default().
+ */
+function localgov_job_vacancies_localgov_roles_default() {
+  // Content editing permissions.
+  $perms = [
+    RolesHelper::EDITOR_ROLE => [
+      'create localgov_job_vacancy content',
+      'delete any localgov_job_vacancy content',
+      'delete localgov_job_vacancy revisions',
+      'delete own localgov_job_vacancy content',
+      'edit any localgov_job_vacancy content',
+      'edit own localgov_job_vacancy content',
+      'revert localgov_job_vacancy revisions',
+      'view localgov_job_vacancy revisions',
+    ],
+  ];
+
+  // Content scheduling permissions required by localgov_workflows.
+  if (\Drupal::moduleHandler()->moduleExists('localgov_workflows')) {
+    $perms[RolesHelper::EDITOR_ROLE] = array_merge($perms[RolesHelper::EDITOR_ROLE], [
+      'add scheduled transitions node localgov_job_vacancy',
+      'reschedule scheduled transitions node localgov_job_vacancy',
+      'view scheduled transitions node localgov_job_vacancy',
+    ]);
+  }
+
+  return $perms;
+}
