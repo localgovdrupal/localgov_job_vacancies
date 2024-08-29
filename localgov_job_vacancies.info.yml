@@ -1,7 +1,7 @@
 name: 'Localgov Job Vacancies'
 type: module
 description: 'Provides a simple Job Vacancy content type, a Job Vacancies view, and accompanying fields and config.'
-package: Custom
+package: 'LocalGov Drupal'
 core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:content_moderation
