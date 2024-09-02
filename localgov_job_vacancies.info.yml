@@ -4,7 +4,6 @@ description: 'Provides a simple Job Vacancy content type, a Job Vacancies view, 
 package: 'LocalGov Drupal'
 core_version_requirement: ^10 || ^11
 dependencies:
-  - drupal:content_moderation
   - drupal:views
   - field_formatter_class:field_formatter_class
   - filefield_paths:filefield_paths

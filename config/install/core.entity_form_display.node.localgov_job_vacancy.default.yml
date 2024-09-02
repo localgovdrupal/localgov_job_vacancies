@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.localgov_job_vacancy.localgov_application_forms
     - field.field.node.localgov_job_vacancy.localgov_closing_date
     - node.type.localgov_job_vacancy
-    - workflows.workflow.localgov_editorial
   module:
     - content_moderation
     - datetime
