@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Test that the job vacancies listings are correct.
+ *
+ * @group localgov_job_vacancies
  */
 class JobVacanciesListingTest extends BrowserTestBase {
 
@@ -147,7 +149,7 @@ class JobVacanciesListingTest extends BrowserTestBase {
   /**
    * Test that the posts we expected are showing.
    */
-  public function testUnpublishdJobVacanciesAreNotVisible(): void {
+  public function testUnpublishedJobVacanciesAreNotVisible(): void {
     // Arrange.
     $closing_date = DrupalDateTime::createFromTimestamp(time());
     $closing_date->setTimezone(new \DateTimeZone('UTC'));

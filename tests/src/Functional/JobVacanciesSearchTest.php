@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Test that the job vacancies search functionality is working.
+ *
+ * @group localgov_job_vacancies
  */
 class JobVacanciesSearchTest extends BrowserTestBase {
 

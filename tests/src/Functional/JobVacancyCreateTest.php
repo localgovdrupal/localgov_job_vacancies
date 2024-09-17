@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Test that users with the correct permissions can create job vacancies.
+ *
+ * @group localgov_job_vacancies
  */
 class JobVacancyCreateTest extends BrowserTestBase {
 
