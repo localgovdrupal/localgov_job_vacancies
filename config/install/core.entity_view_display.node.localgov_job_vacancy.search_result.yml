@@ -27,11 +27,6 @@ content:
         class: ''
     weight: 4
     region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -47,5 +42,6 @@ content:
     weight: 3
     region: content
 hidden:
+  content_moderation_control: true
   localgov_application_forms: true
   search_api_excerpt: true
