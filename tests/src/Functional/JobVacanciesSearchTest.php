@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\localgov_job_vacancies\Functional;
 
-use Drupal\Tests\BrowserTestBase;
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Tests\BrowserTestBase;
 use Drupal\Tests\TestFileCreationTrait;
 use Drupal\Tests\Traits\Core\CronRunTrait;
 use Symfony\Component\HttpFoundation\Response;
