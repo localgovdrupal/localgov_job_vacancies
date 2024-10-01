@@ -6,8 +6,6 @@ dependencies:
   module:
     - system
     - views
-id: localgov_job_vacancies_search_job_vacancies_page
-theme: localgov_scarfolk
 region: sidebar_first
 weight: 0
 provider: null
