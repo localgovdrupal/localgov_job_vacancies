@@ -24,7 +24,7 @@ class JobVacancyCreateTest extends BrowserTestBase {
    *
    * @var string
    */
-  protected $defaultTheme = 'gin';
+  protected $defaultTheme = 'localgov_scarfolk';
 
   /**
    * Install profile to use.
@@ -40,6 +40,7 @@ class JobVacancyCreateTest extends BrowserTestBase {
    *   An array of module machine names.
    */
   protected static $modules = [
+    'localgov_workflows',
     'localgov_job_vacancies',
     'node',
     'content_moderation',
