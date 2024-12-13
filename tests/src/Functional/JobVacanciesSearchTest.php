@@ -49,6 +49,7 @@ class JobVacanciesSearchTest extends BrowserTestBase {
    */
   protected static $modules = [
     'block',
+    'content_moderation',
     'datetime',
     'field_ui',
     'localgov_search',
