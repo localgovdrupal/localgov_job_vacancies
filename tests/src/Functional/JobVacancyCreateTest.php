@@ -46,6 +46,7 @@ class JobVacancyCreateTest extends BrowserTestBase {
     'content_moderation',
     'datetime',
     'file',
+    'system',
   ];
 
   /**
@@ -82,6 +83,7 @@ class JobVacancyCreateTest extends BrowserTestBase {
       'use localgov_editorial transition publish',
     ]);
 
+    $this->drupalPlaceBlock('local_actions_block');
     $this->drupalPlaceBlock('local_tasks_block');
   }
 

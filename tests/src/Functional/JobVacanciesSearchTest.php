@@ -51,14 +51,21 @@ class JobVacanciesSearchTest extends BrowserTestBase {
     'block',
     'content_moderation',
     'datetime',
+    'file',
+    'text',
+    'user',
     'field_ui',
-    'localgov_search',
-    'localgov_job_vacancies',
     'menu_ui',
-    'search_api',
     'pathauto',
+    'search_api',
+    'search_api_db',
+    'system',
     'node',
     'views',
+    'localgov_search',
+    'localgov_search_db',
+    'localgov_workflows',
+    'localgov_job_vacancies',
   ];
 
   /**
@@ -69,6 +76,11 @@ class JobVacanciesSearchTest extends BrowserTestBase {
 
     $this->drupalPlaceBlock('localgov_job_vacancies_search_job_vacancies_page', [
       'region' => 'sidebar_first',
+    ]);
+
+    $this->drupalPlaceBlock('system_main_block', [
+      'weight' => -1,
+      'region' => 'content',
     ]);
 
     $this->fileSystem = \Drupal::service('file_system');
@@ -91,7 +103,6 @@ class JobVacanciesSearchTest extends BrowserTestBase {
       'localgov_closing_date[0][value][time]' => $closing_date->format('H:i:s'),
       'moderation_state' => 'published',
       'files[localgov_application_forms_0][]' => $this->fileSystem->realpath($document->uri),
-
     ]);
 
     $closing_date_job2 = DrupalDateTime::createFromTimestamp(time());
@@ -135,8 +146,8 @@ class JobVacanciesSearchTest extends BrowserTestBase {
 
     $assert->pageTextContains('Job Vacancies Search');
 
-    $this->getSession()->getPage()->fillField('search', 'Second');
-    $this->getSession()->getPage()->pressButton('Apply');
+    $this->getSession()->getPage()->fillField('edit-search--2', 'Second');
+    $this->getSession()->getPage()->pressButton('edit-submit-localgov-job-vacancies-search--2');
     $assert->pageTextContains('Second vacancy');
     $assert->pageTextNotContains('First vacancy');
     $assert->pageTextNotContains('Third vacancy');
@@ -159,7 +170,6 @@ class JobVacanciesSearchTest extends BrowserTestBase {
       'localgov_closing_date[0][value][time]' => $closing_date->format('H:i:s'),
       'moderation_state' => 'published',
       'files[localgov_application_forms_0][]' => $this->fileSystem->realpath($document->uri),
-
     ]);
 
     $closing_date_job2 = DrupalDateTime::createFromTimestamp(time());
@@ -203,7 +213,7 @@ class JobVacanciesSearchTest extends BrowserTestBase {
 
     $assert->pageTextContains('Job Vacancies Search');
 
-    $this->getSession()->getPage()->fillField('search', 'developer');
+    $this->getSession()->getPage()->fillField('edit-search--2', 'developer');
     $this->getSession()->getPage()->pressButton('Apply');
     $this->assertSession()->responseNotContains('search-result__content');
   }
